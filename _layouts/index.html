@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+  <head>
+
+      {% include head.html %}
+
+      {% for stylesheet in page.cssVendor %}
+
+        <link href='{{ site.url }}/vendor/css/{{ stylesheet }}.css' type='text/css' rel='stylesheet'/>
+
+      {% endfor %}
+
+  </head>
+
+  <body id="body">
+
+    <main>
+
+
+      <div id="content-main" class="content-main">
+        {{ content }}
+      </div>
+
+      {% include sidebar.html %}
+
+    </main>
+
+    {% include footer.html %}
+
+    <!-- require Require.js -->
+
+    <script type="text/javascript" src='{{site.url}}/vendor/javascript/require.js'>
+    </script>
+
+    <!-- Using CommonJS introduce needed dependencies -->
+
+    <script type="text/javascript">
+
+      require.config({
+
+          paths: {
+
+            "jquery": '{{site.url}}/vendor/javascript/jquery-3.1.1.min',
+            "magnificPopup": '{{site.url}}/vendor/javascript/jquery.magnific-popup.min',
+            "rafPolyfill": '{{site.url}}/vendor/javascript/RAF_polyfill',
+            "smoothState": '{{site.url}}/vendor/javascript/smoothstate.min',
+            "smoothScroll": '{{site.url}}/scripts/smooth_scroll',
+            "TweenLite": '{{site.url}}/vendor/javascript/greensock',
+            "typewriter": '{{site.url}}/vendor/javascript/typed.min',
+          },
+
+          shim: {
+
+            "magnificPopup": {
+
+              deps: ["jquery"]
+            },
+
+            "smoothScroll": {
+
+              deps: ["jquery"]
+            },
+
+            "smoothState": {
+
+              deps: ['jquery']
+            },
+
+            "typewriter": {
+
+              deps: ["jquery"]
+            },
+
+            "textType": {
+
+              deps: ["jquery"]
+            }
+          }
+      });
+
+      function childrenRetrieve(element, inputtedClass) {
+
+        if(element.children.length) {
+
+          for (var i = 0; i < element.children.length; i++) {
+
+            var currentElement = element.children[i];
+
+            if ( currentElement.className.indexOf(inputtedClass) > -1) {
+
+              return currentElement;
+            }
+          }
+
+          return false;
+        }
+      }
+
+      if(!window.requestAnimationFrame) {
+
+        require(['rafPolyfill']);
+      }
+
+
+      require(['jquery'], function(){
+
+        $(function() {
+
+          // When you hover over portfolio img/link do this...
+
+          $(".portfolio-item").mouseenter(function(){
+
+            $(this).addClass("prt-hover");
+
+          }).mouseleave(function(){
+
+            $(this).removeClass("prt-hover");
+          });
+        });
+
+      });
+
+      require(['TweenLite', 'typewriter'], function(){
+
+        require(['{{site.url}}/scripts/index.js']);
+      });
+
+      require(['magnificPopup'], function(){
+
+
+        $(".mfg-popup-link").magnificPopup({
+          type: 'image',
+
+          gallery: {
+
+            enabled: true
+          },
+
+          image: {
+
+            markup: '<div class="mfp-figure">'
+                      +'<div class="mfp-width-inline mfp-float-left">'
+                        +'<div class="mfp-close"></div>'
+                        +'<div class="mfp-img"></div>'
+                        +'<div class="mfp-bottom-bar">'
+                          +'<div class="mfp-counter"></div>'
+                        +'</div>'
+                      +'</div>'
+                      +'<div class="mfp-title mfp-width-text-inline mfp-float-right"></div>'
+                    +'</div>',
+
+
+            titleSrc: function(item) {
+
+              var elTitle = childrenRetrieve(item.el[0], "mfp-pu-title").textContent;
+              elTitle = elTitle ? elTitle : elTitle="";
+
+              var elDesc = childrenRetrieve(item.el[0], "mfp-pu-desc").textContent;
+              elDesc = elDesc ? elDesc : el
+
+              var dataRedir = item.el[0].getAttribute('data-redir');
+              if(!dataRedir) dataRedir = "";
+
+              var htmlMarkup = '<div>'
+                                  + '<div class="mfp-text-content">'
+                                    + '<h2 class="mfp-custom-title">'
+                                      + elTitle
+                                    +'</h2>'
+                                    + '<p class="mfp-custom-text">'
+                                      + elDesc
+                                    + '</p>'
+                                    + '<div class="ref-link">'
+                                      +'<a class="mfp-redir" href="' + dataRedir + '">'
+                                        + '[See More]'
+                                      + '</a>'
+                                    + '</div>'
+                                  + '</div>'
+                                +'</div>';
+
+              return htmlMarkup;
+            }
+
+          }
+
+        });
+      });
+
+      require(['smoothScroll']);
+
+    </script>
+
+  </body>
+
+</html>

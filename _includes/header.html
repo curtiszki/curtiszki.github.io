@@ -1,0 +1,36 @@
+<!-- header partial -->
+<header id="header">
+
+  <div class="hdr-inner-wrapper clearfix-auto">
+
+    <div class="hdr-icon-wrapper">
+
+      <p class="hdr-inline-txt-title">
+        <a class="hdr-txt-title-span" id="text-flip" href="{{site.url}}{{page.url}}"> {{page.hdr_title}} </span>
+      </p>
+    </div>
+
+    <ul class="hdr-inline-nav">
+      <a href="{{site.url}}" class="hdr-category">
+        <li class="hdr-category-content">
+          Home
+        </li>
+      </a>
+
+      <a href="{{site.url}}/contact" class="hdr-category">
+        <li class="hdr-category-content">
+          Contact
+        </li>
+      </a>
+
+      <a href="{{site.url}}/blog" class="hdr-category">
+        <li class="hdr-category-content">
+          Blog
+        </li>
+      </a>
+    </ul>
+
+  </div>
+
+  {% include sidebar.html %}
+</header>

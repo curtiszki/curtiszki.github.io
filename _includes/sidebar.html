@@ -1,0 +1,169 @@
+<!-- this is the absolutely positioned sitebar markup for the site -->
+
+<!-- :Sidebar -->
+
+<!-- This is the hamburger icon to display -->
+<div id="sidebar-hamburger-icon" style="display: none;">
+
+  <span class="hamburger-lines"></span>
+
+</div>
+<section id="sidebar">
+  <div class="sidebar-outer-wrapper">
+
+    <div class="sidebar-top">
+
+      <div class="sidebar-close">
+
+        <i class="fa fa-close" id="sidebar-close"></i>
+
+      </div>
+
+      <h2 class="sidebar-title">Curtis Grotzke</h2>
+
+    </div>
+
+    <div class="sidebar-partition"></div>
+
+    <div class="sidebar-content-wrapper">
+
+      <div class="sidebar-inner-container">
+
+        <div class="sidebar-inner-contents">
+
+          <nav class="sidebar-navigation">
+
+            <ul class="sidebar-navigation-list" style="list-style: none;">
+
+              <!--
+              <ul class="sidebar-internal-list sidebar-item is-open" id="home-index">
+                <div class="nesting-link">
+                  <a href="/" class="sidebar-category-nest"> <span class="sidebar-category">Home</span> </a>
+                </div>
+                <div class="subcategory-wrapper">
+                  <li class="sidebar-subcategory"> <a href="/#landing"> Header </a> </li>
+                  <li class="sidebar-subcategory"> <a href="/#services"> Services </a> </li>
+                    <li class="sidebar-subcategory"> <a href="/#portfolio"> Portfolio </a> </li>
+                  <li class="sidebar-subcategory"> <a href="/#blog"> Blog </a> </li>
+                </div>
+              </ul>
+              -->
+              <div class='sidebar-link-wrapper'>
+                <a class='sidebar-item' href='/'>
+                  <li class='sidebar-category'> Home </li>
+                </a>
+              </div>
+
+              <div class='sidebar-link-wrapper'>
+                <a class="sidebar-item" href="/blog">
+                  <li class="sidebar-category"> Blog </li>
+                </a>
+              </div>
+
+              <div class='sidebar-link-wrapper'>
+                <a class="sidebar-item" href="/contact">
+                  <li class="sidebar-category"> Contact </li>
+                </a>
+              </div>
+
+              <!--
+              <a class="sidebar-item" href="/portfolio">
+                <li class="sidebar-category"> Portfolio </li>
+              </a>
+            -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- When the sidebar is active, this mask will darken the background -->
+<div id="sidebar-mask"></div>
+
+<!-- js for opening/closing nests -->
+<script type="text/javascript" defer async>
+
+  sidebarListeners();
+
+  var sidebarSublists = document.getElementsByClassName('sidebar-internal-list');
+
+  // iterate over all collected elements and add an open/close click listener
+
+  for( i = 0; i < sidebarSublists.length; i++) {
+
+    // use jekyll templated page variables to see if list item is pertinent to current page.
+    var pageId = '{{page.id}}';
+
+    sidebarSublists[i].addEventListener('click', function(e){
+
+        if (this.classList.contains('is-open')) {
+
+          this.classList.remove('is-open');
+
+        } else {
+          this.classList.add('is-open');
+        }
+    });
+
+    if(sidebarSublists[i].getAttribute("id") == (pageId)) sidebarSublists[i].classList.add("current-page");
+
+  }
+
+  <!-- sidebar open/close listeners -->
+  function sidebarListeners() {
+
+    var body = document.getElementById('body'),
+    content = document.getElementById('content-main');
+
+    var sidebar = document.getElementById('sidebar');
+    var sidebarOpen = document.getElementById('sidebar-hamburger-icon');
+    var sidebarClose = document.getElementById('sidebar-close');
+    var sidebarMask = document.getElementById('sidebar-mask');
+
+    sidebarOpen.addEventListener('click', function(e){
+
+      e.preventDefault();
+      openSidebar();
+    });
+
+    sidebarClose.addEventListener('click', function(e){
+
+      e.preventDefault();
+      closeSidebar();
+    });
+
+    sidebarMask.addEventListener('click', function(e) {
+
+      e.preventDefault();
+      closeSidebar();
+    });
+
+
+    function closeSidebar() {
+
+      body.classList.remove('sidebar-active');
+      sidebar.classList.add('transitioning');
+      sidebar.classList.remove('is-active');
+      sidebarMask.classList.remove('is-active');
+      content.style.right = '0px';
+
+      setTimeout(function(){
+        sidebar.classList.remove('transitioning');
+      }, 1000);
+
+    }
+
+    function openSidebar() {
+
+      sidebar.classList.add('is-active');
+      body.classList.add('sidebar-active');
+      sidebarMask.classList.add('is-active');
+      content.style.right = sidebar.clientWidth+'px';
+    }
+  }
+</script>
+<!-- js: -->
+
+<!-- Sidebar: -->

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    {% include head.html %}
+
+    {% for stylesheet in ancillaryCss %}
+
+      <link href='/css/{{ stylesheet }}.css' type='text/css' rel='stylesheet'/>
+
+    {% endfor %}
+
+    {% for stylesheet in cssVendor %}
+
+      <link href='/vendor/css/{{ stylesheet }}.css' type='text/css' rel='stylesheet'/>
+
+    {% endfor %}
+
+  </head>
+
+  <body id="body">
+
+    {% include header.html %}
+
+    <main>
+
+      <div id="content-main" class="content-main">
+        {{ content }}
+      </div>
+
+      {% include sidebar.html %}
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+  <!-- Require.js -->
+
+  <script type="text/javascript" src='/vendor/javascript/require.js'></script>
+
+  <!-- use require.js to solve dependencies -->
+
+  <script type="text/javascript">
+
+    require.config({
+
+      paths: {
+
+        "jquery": '/vendor/javascript/jquery-3.1.1.min',
+        "smoothScroll": '/scripts/smooth_scroll'
+      },
+
+      shim: {
+
+        "smoothScroll": {
+
+          deps: ["jquery"]
+        }
+      }
+    });
+
+    require(['smoothScroll']);
+
+  </script>
+  <!-- Require.js: -->
+
+  {% for script in page.jsVendor %}
+    <script type="text/javascript" src='/vendor/javascript/{{script}}.js'></script>
+  {% endfor %}
+
+  {% if page.javascript.size > 0 %}
+    {% for script in page.javascript %}
+      <script type="text/javascript" src='/scripts/{{script}}.js'></script>
+    {% endfor %}
+  {% endif %}
+
+</html>

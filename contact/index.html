@@ -1,0 +1,72 @@
+---
+title: {{ site.title }}
+header_title: Contact Form
+css: contact
+hdr_title: contact form
+javascript: contact
+
+jsVendor: ['validate.min']
+---
+
+<!-- The site is nested body -> main -> div.content-main -->
+
+<div class="content-main">&nbsp;
+
+  <div class="content-wrapper">
+
+    <div class="contact-wrapper text-align-center">
+
+      <div class="contact-title-wrapper">
+        <h2 class="contact-header main-header-large">Let's get in touch!</h2>
+      </div>
+
+      <div class="contact-form-wrapper">
+
+        <div class="contact-desc">
+
+          <p>
+            If you would like to get in touch me for any inquiries/questions please
+            email me using the contact form below.
+          </p>
+
+        </div>
+
+        <!-- use formspree to send mails from github pages -->
+        <form name="contact" class="contact-form" id="contact">
+
+          <div class="error-display-container">
+            <div id="error-display"></div>
+          </div>
+
+          <div class="form-item">
+            <label class="required" for="name">Name</label>
+            <input name="name" type="text" id="name" placeholder="What's your name?" maxlength="20" autofocus>
+          </div>
+
+          <div class="form-item">
+            <label class="required" for="email">Email</label>
+            <input name="email" type="text" id="email" placeholder="example@email.com">
+          </div>
+
+          <div class="form-item">
+            <label class="required" for="topic">What's happening?</label>
+            <textarea name="topic" placeholder="What do you want to write about?" id="topic" rows="8" maxlength="3000"></textarea>
+
+          </div>
+
+          <button id="contact-submit" type="submit">Submit</button>
+
+          <!-- formspree inputs -->
+
+          <div class="success-form">
+            <div class="success-lead">
+              <i class="fa fa-envelope-square"></i>
+              <h3 class="success-hdr">Your email has been sent!</h3>
+              <p class="success-txt">I should generally be able to get back to you to answer any queries/questions/concerns within a day or two.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

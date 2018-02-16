@@ -1,0 +1,39 @@
+// scss file containing keyframes and variable declarations
+
+/* Variable Declarations */
+
+$default-font-size: 15px;
+$default-header-color: #373737;
+$ftr-list-icon-margin: 1.4em;
+$html-default-font-color: #525252;
+
+
+$default-font-family: 'Catamaran', Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+$monospace-font: 'Ubuntu', Consolas, monaco, monospace;
+
+
+$hdr-top-displacement: 14px;
+
+/* Variable Declarations: */
+
+
+/* Keyframe animations */
+
+@keyframes blink {
+
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes blinking {
+
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce {
+
+  0%, 40%, 80%, 100% { transform: translateY(0); }
+  20% { transform: translateY(1px);}
+  60%, 90% { transform: translateY(1px);}
+}

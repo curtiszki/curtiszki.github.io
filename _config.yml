@@ -1,0 +1,55 @@
+# Site Variables
+
+title: Curtis Grotzke | Web Developer
+email: cugrotzke@gmail.com
+author: Curtis Grotzke
+timezone: America/Vancouver
+description: > # this means to ignore newlines until "baseurl:"
+  Curtis Grotzke,
+  a Vancouver, Canada based front-end Web Developer with a focus on quality user experience and
+  responsive design.
+baseurl: 'curtiszki.github.io'
+github_username:  curtiszki
+
+# Set the base Sass @import dir
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Set the port
+
+port: 8080
+
+# Blog post configuration
+
+excerpt_separator: <!--excerpt-->
+permalink: /blog/posts/:categories/:title
+
+# Default settings
+
+defaults:
+
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: 'blog_post'
+      css: 'blog'
+      hdr_title: 'blog'
+
+# Build settings
+
+markdown: kramdown
+gems:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - octopress-autoprefixer
+exclude:
+  - Gemfile
+  - Gemfile.lock

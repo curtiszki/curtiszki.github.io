@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body id="body">
+
+    {% include header.html %}
+    <main>
+
+      <div id="content-main" class="content-main">
+          {{ content }}
+      </div>
+
+    </main>
+
+    {% include footer.html %}
+  </body>
+
+  <!-- Require.js -->
+
+  <script type="text/javascript" src='{{site.url}}/vendor/javascript/require.js'></script>
+
+  <!-- use require.js to solve dependencies -->
+
+  <script type="text/javascript">
+
+    require.config({
+
+      paths: {
+
+        "jquery": '{{site.url}}/vendor/javascript/jquery-3.1.1.min',
+        "smoothScroll": '{{site.url}}/scripts/smooth_scroll'
+      },
+
+      shim: {
+
+        "smoothScroll": {
+
+          deps: ["jquery"]
+        }
+      }
+    });
+
+    require(['smoothScroll']);
+
+  </script>
+  <!-- Require.js: -->
+</html>

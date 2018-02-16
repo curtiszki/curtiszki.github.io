@@ -1,0 +1,71 @@
+<footer id="footer">
+  <div class="footer-container">
+
+  <div class="footer-content-wrapper">
+
+    <div class="contact-button-wrapper">
+      <a href='/contact'>
+        Contact Me
+      </a>
+    </div>
+
+    <ul class="site-navigation-footer">
+
+    <li>
+      <a href="/">
+        Home
+      </a>
+    </li>
+    <!--
+    <li>
+      <a href="{{site.url}}/portfolio">
+        Portfolio
+      </a>
+    </li>
+    -->
+    <li>
+      <a href="/blog">
+        Blog
+      </a>
+    </li>
+    <li>
+      <a href="/contact">
+        Contact
+      </a>
+    </li>
+  </ul>
+
+
+  </div>
+
+  <div class="copyright-container">
+    <p class="copyright">
+      &#169; 2018. Curtis Grotzke. All Rights Reserved.
+    </p>
+  </div>
+
+</div>
+</footer>
+
+<!-- sticky footer bottom js code -->
+
+<script type="text/javascript">
+
+  // using vanilla JS retrieve the footer height and set a corresponding margin to the body.
+
+  var footer = document.getElementById("footer");
+  var body = document.getElementById("body");
+
+  body.style.marginBottom = outerHeight(footer)+"px";
+
+  function outerHeight(el) {
+
+    var height = el.offsetHeight;
+    var style = getComputedStyle(el);
+
+    height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+
+    return height;
+  }
+
+</script>

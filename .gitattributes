@@ -1,0 +1,21 @@
+## .gitattributes
+
+## Regulate Github LF normalization.
+
+
+# Ensure the following are interpreted as text
+
+*.pdf diff=astextplain
+*.PDF diff=astextplain
+
+*.html text
+*.htm text
+*.js text
+*.scss text
+*.css text
+
+# Ensure Github doesn't alter images
+
+*.jpg binary
+*.png binary
+*.gif binary

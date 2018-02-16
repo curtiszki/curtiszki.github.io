@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body id="body">
+
+      {% include header.html %}
+
+      <main>
+
+        <div id="content-main" class="content-main content-blog-post">
+
+          <div class="blog-post-wrapper">&nbsp;
+              <div class="blog-post-main">
+
+                <div class="blog-post-title-container">
+                  <h2 class="blog-post-title-header"> {{page.post_title}} </h2>
+                  <p class="blog-post-date">
+                    <i class="fa fa-clock-o"></i>
+                    Date Created:&nbsp;
+                    <span class="post-date">
+                    {% assign d = page.date | date: '%-d' %}
+                    {% case d %}
+                      {% when '1' or '21' or '31' %}{{ d }}st
+                      {% when '2' or '22' %}{{ d }}nd
+                      {% when '3' or '23' %}{{ d }}rd
+                      {% else %}{{ d }}th
+                    {% endcase %}
+                    {{ page.date | date: '%B' }},
+                    {{ page.date | date: '%Y' }}
+                    </span>
+                  </p>
+                </div>
+
+                <div class="blog-post-text">
+
+                  {{ content }}
+
+                </div>
+
+                <!-- :discus -->
+                <div id="disqus_thread" style="padding: 44px 0 26px;"></div>
+                <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://curtiszki-github-io.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <!-- discus: -->
+              </div>
+
+
+          </div>
+        </div>
+
+      </main>
+
+      {% include footer.html %}
+
+  </body>
+
+  <!-- Require.js -->
+  <script type="text/javascript" src='{{site.url}}/vendor/javascript/require.js'></script>
+  <!-- use require.js to solve dependencies -->
+
+  <script type="text/javascript">
+
+    require.config({
+
+      paths: {
+
+        "jquery": '{{site.url}}/vendor/javascript/jquery-3.1.1.min',
+        "smoothScroll": '{{site.url}}/scripts/smooth_scroll'
+      },
+
+      shim: {
+
+        "smoothScroll": {
+
+          deps: ["jquery"]
+        }
+      }
+    });
+
+    require(['smoothScroll']);
+
+  </script>
+  <!-- Require.js: -->
+
+  <style media="screen and (min-width: 320px)">
+
+    .blog-post-main {
+
+      width: 100%;
+      border-left-style: none;
+      border-right-style: none;
+    }
+
+  </style>
+
+  <style media="screen and (min-width: 480px)">
+
+    .blog-post-main {
+
+      width: 94%;
+    }
+  </style>
+
+  <style media="screen and (min-width: 600px)">
+
+    .blog-post-main {
+
+      width: 88%;
+    }
+  </style>
+
+  <style media="screen and (min-width:840px)">
+    .blog-post-main {
+
+      width: 84%;
+    }
+  </style>
+
+  <style media="screen and (min-width: 960px)">
+
+    .blog-post-main {
+
+      width: 82%;
+    }
+  </style>
+
+</html>
