@@ -29,7 +29,7 @@ table {
 .content-main {
 
   box-sizing: border-box;
-  padding: 24px 0;
+  padding: 8px 0 24px;
   word-wrap: break-word;
 }
 
@@ -58,7 +58,7 @@ table {
 
   .blog-primary-title {
 
-    color: #5f6c63;
+    color: #525252;
     text-align: left;
     padding: 28px 0 34px;
     position: relative;
@@ -77,9 +77,9 @@ table {
   }
 
   #main-title-underline {
-    background: #77cb89;
+    background: #747474;
     bottom: 18px;
-    height: 1px;
+    height: 2px;
     left: 0;
     margin-top: 0;
     min-width: 200px;
@@ -87,7 +87,7 @@ table {
     right: 0;
     width: 20%;
   }
-
+/*
   #main-title-underline:before,
   #main-title-underline:after {
     bottom: 0;
@@ -107,7 +107,7 @@ table {
     left: 80%;
     width: 20%;
   }
-
+*/
   #blog-content {
 
     padding: 24px 0px 12px;
@@ -122,8 +122,8 @@ table {
 
       .blog-item-content-wrapper {
 
-        background-color: #e6e9ea;
-        padding: 6px;
+        border: 1px solid #b4b4b4;
+        padding: 12px 6px;
 
         .blog-item-main-wrapper {
 
@@ -154,7 +154,7 @@ table {
 
               .blog-item-date {
 
-                color: #5c666c;
+                color: #404244;
                 font-size: 1.05em;
                 margin-top: 10px;
                 padding-left: 0.4em;
@@ -176,7 +176,7 @@ table {
 
               .blog-item-excerpt {
 
-                margin-top: 14px;
+                margin-top: 18px;
                 text-indent: 6px;
                 line-height: 1.2em;
                 width: 92%;
@@ -263,14 +263,14 @@ table {
     }
 
     .blog-post:not(:last-child):after {
-      background: #bab9bf;
+      background: #d1d1d1;
       bottom: 10px;
       content: '';
       height: 1px;
       left: 0;
       position: absolute;
-      min-width: 50px;
-      width: 34%;
+      min-width: 38px;
+      width: 26%;
     }
 
     .blog-post:first-child {
