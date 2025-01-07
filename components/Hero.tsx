@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className='relative w-full'>
         <ShineBorder
-            className="relative -top-[25px] -left-[5px] container justify-center text-left mx-auto px-10 pt-8 pb-14
+            className="relative -left-[5px] container justify-center text-left mx-auto mt-[25px] mb-[50px] px-10 pt-8 pb-14
             bg-black rounded-md"
             color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
             <div className="flex flex-col gap-[2px] leading-snug text-xl text-slate-200">
