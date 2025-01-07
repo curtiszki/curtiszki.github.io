@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React from "react";
+import * as Constants from "@/constants";
 
 export const HeroHighlight = ({
   children,
@@ -29,14 +30,14 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "relative h-[40rem] flex items-center bg-white dark:bg-black justify-center w-full group",
+        "h-full flex items-center bg-white dark:bg-black justify-center w-full group",
         containerClassName
       )}
       onMouseMove={handleMouseMove}
     >
-      <div className="absolute inset-0 bg-dot-thick-neutral-900 dark:bg-dot-thick-neutral-800  pointer-events-none" />
+      <div className={`absolute inset-0 bg-dot-thick-${Constants.hero_opacity_day} dark:bg-dot-thick-${Constants.hero_opacity_dark}  pointer-events-none`} />
       <motion.div
-        className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+        className={`pointer-events-none bg-dot-thick-${Constants.hero_highlight_day} dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100`}
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(

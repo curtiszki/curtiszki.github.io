@@ -1,15 +1,31 @@
 import React from 'react'
-import { HeroHighlight } from './ui/hero-highlight'
+import { ShineBorder } from './ui/shine-border'
+import { BounceArrow } from './ui/bounce-arrow'
 
 const Hero = () => {
   return (
     <div className='relative w-full'>
-        <HeroHighlight
-            containerClassName={`relative w-full bg-transparent py-14 px-36 bg-blend-luminosity bg-dot-thick-red/[0.02]`}
-            className={'opacity-100'}
-        >
-            Display something here???
-        </HeroHighlight>
+        <ShineBorder
+            className="relative -top-[25px] -left-[5px] container justify-center text-left mx-auto px-10 pt-8 pb-14
+            bg-black rounded-md"
+            color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+            <div className="flex flex-col gap-[2px] leading-snug text-xl text-slate-200">
+                <p className='font-bold flex-none'>Hi, my name is</p>
+                <p className='text-3xl font-bold text-teal-500 flex-none'>Curtis Grotzke</p>
+                <p className='flex-none'>
+                    A software developer and current student at Simon Fraser University.
+                </p>
+
+                <ul>
+                    <li>About</li>
+                    <li>Projects</li>
+                    <li>Contact</li>
+                </ul>
+            
+            </div>
+
+            <BounceArrow />
+        </ShineBorder>
     </div>
   )
 }
