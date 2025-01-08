@@ -14,7 +14,7 @@ export const ContactForm = () => {
               <input 
                 className={`${inputClass}`}
                 type="text" name="contact" required={true} maxLength={48}/>
-              <p className='peer-focus:text-red-400 duration-300 transition-colors'>Name:</p>
+              <p className={subHeaderClass}>Name:</p>
           </label>
           <label htmlFor="mail" className={labelClass}>
               <input className={inputClass} type="email" name="mail" required={true} maxLength={48}/>

@@ -5,10 +5,10 @@ import { ContactForm } from './ui/contact-form'
 
 const Contact = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper idName="contact">
         <SectionTitle 
             title='Get in touch'
-        />
+            />
         <SectionContent>
                 <ContactForm/>
         </SectionContent>

@@ -89,14 +89,14 @@ const ProjectData = [
 
 const Projects = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper idName='projects'>
         <SectionTitle
             title='Projects'
-        />
+            />
         <SectionContent>
             <Showcase 
                 data = {ProjectData} 
-            />
+                />
         </SectionContent>
     </SectionWrapper>
 )}
