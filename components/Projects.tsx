@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionWrapper } from './ui/section-wrapper'
+import { SectionWrapper, SectionContent } from './ui/section-wrapper'
 import { SectionTitle } from './ui/section-title'
 import { Showcase } from './ui/showcase'
 
@@ -93,9 +93,11 @@ const Projects = () => {
         <SectionTitle
             title='Projects'
         />
-        <Showcase 
-            data = {ProjectData} 
-        />
+        <SectionContent>
+            <Showcase 
+                data = {ProjectData} 
+            />
+        </SectionContent>
     </SectionWrapper>
 )}
 

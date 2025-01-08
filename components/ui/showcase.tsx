@@ -67,9 +67,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
               </div>
               <div className="flex flex-row gap-2 group-hover/projects:text-teal-600 duration-500">
                 {typeof item.repo === "string" &&
-                  <a href={item.repo}
-                    
-                  >
+                  <a href={item.repo}>
                     <FaGithub />
                   </a>
                 }
