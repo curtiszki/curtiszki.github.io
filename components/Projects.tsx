@@ -56,33 +56,26 @@ const ProjectData = [
         ],
     },
     {
-        title: 'Lorem Ipsum',
+        title: 'Linux Shell',
         content: (
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Customizable shell usable on all POSIX-compliant systems. Allows for users to optimize tasks through multithreadings, speeding up tasks alongside user personalization capabilities.
             </p>
         ),
-        repo: '#',
+        repo: 'https://github.com/curtiszki/Custom-Shell',
         tags: [
-            'Orange', 'Potato', 'Cactus'
+            'C'
         ],
     },
     {
-        title: 'Lorem Ipsum',
+        title: 'Portfolio Website',
         content: (
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                A personal website developed as a tool to communicate and showcase abilities. You&apos;re currently using it. Built using Next.js and Tailwind CSS.
             </p>
         ),
-        repo: '#',
-        href: [
-            {
-                href: '#',
-                message: 'Live Demo'
-            },
-        ],
         tags: [
-            'Orange', 'Potato', 'Cactus'
+            'Next.js', 'React', 'Typescript', 'Tailwind', 'CSS', 'HTML'
         ],
     },
 ]
