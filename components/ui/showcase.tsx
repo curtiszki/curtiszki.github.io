@@ -84,6 +84,18 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                 }
               </div>
             </div>
+            <div className="flex flex-row gap-x-2 gap-y-0 my-2">
+              {
+                item.tags.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className='inline-flex text-xs px-3 py-1 rounded-full font-medium leading-3 bg-teal-500/30 border-teal-300 border-1 text-teal-300'
+                  >
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
           </div>
         ))}
         <div

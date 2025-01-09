@@ -35,9 +35,9 @@ export const HeroHighlight = ({
       )}
       onMouseMove={handleMouseMove}
     >
-      <div className={`absolute inset-0 bg-dot-thick-${Constants.hero_opacity_day} dark:bg-dot-thick-${Constants.hero_opacity_dark}  pointer-events-none`} />
+      <div className={`absolute inset-0 bg-dot-thick-neutral-900 dark:bg-dot-thick-neutral-900  pointer-events-none`} />
       <motion.div
-        className={`pointer-events-none bg-dot-thick-${Constants.hero_highlight_day} dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100`}
+        className={`pointer-events-none bg-dot-thick-teal-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100`}
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
