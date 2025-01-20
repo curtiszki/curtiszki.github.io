@@ -58,19 +58,23 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
             key={index}
             className="relative cursor-pointer rounded-lg py-[4px] px-[8px] hover:shadow-[inset_0_0_0_10em_rgba(255,255,255,0.08)] border-[1px] border-transparent hover:border-slate-600/25 transition-all:ease-out duration-500"
           >
-            <div className="flex flex-col gap-y-1 group/projects">
-              <h6 className="font-bold">
-                {item.title}
-              </h6>
+            <div className="flex flex-col gap-y-1">
+              <div className="flex flex-row gap-x-2 gap-y-0 items-center">
+                <h6 className="font-bold">
+                  {item.title}
+                </h6>
+                <div className="relative left-1">
+                  {typeof item.repo === "string" &&
+                        <a className="hover:text-teal-600 duration-200 transition-colors ease-out" href={item.repo}>
+                          <FaGithub />
+                        </a>
+                  }
+                </div>
+              </div>
               <div>
                 {item.content}
               </div>
-              <div className="flex flex-row gap-2 group-hover/projects:text-teal-600 duration-500">
-                {typeof item.repo === "string" &&
-                  <a href={item.repo}>
-                    <FaGithub />
-                  </a>
-                }
+              <div>
                 {
                   item.href &&
                   item.href.map((item, idx) => (

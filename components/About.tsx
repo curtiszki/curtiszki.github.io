@@ -10,7 +10,9 @@ const About = () => {
             />
         <SectionContent>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Hello, there! I&apos;m a current undergraduate student undertaking the Software Systems program at Simon Fraser University. 
+                Software development is something I developed a passion for after attempting to understand how to create mods for games &#40;Sid Meier&apos;s Civilization and Paradox Games are something I have long been addicted to&#41;, and fully realized after building a full stack LAMP application in my spare time.                 
+                I enjoy drafting, designing, and implementing ideas into functional code.
             </p>
         </SectionContent>
     </SectionWrapper>

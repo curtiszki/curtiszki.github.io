@@ -5,57 +5,6 @@ import { Showcase } from './ui/showcase'
 
 const ProjectData = [
     {
-        title: 'Lorem Ipsum',
-        content: (
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        ),
-        repo: '#',
-        href: [
-            {
-                href: '#',
-                message: 'Live Demo'
-            },
-            {
-                href: '#',
-                message: 'Another Demo'
-            }
-        ],
-        tags: [
-            'Orange', 'Potato', 'Cactus'
-        ],
-    },
-    {
-        title: 'Lorem Ipsum',
-        content: (
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        ),
-        repo: '#',
-        href: [
-            {
-                href: '#',
-                message: 'Live Demo'
-            },
-        ],
-        tags: [
-            'Orange', 'Potato', 'Cactus'
-        ],
-    },
-    {
-        title: 'Lorem Ipsum',
-        content: (
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        ),
-        tags: [
-            'Orange', 'Potato', 'Cactus'
-        ],
-    },
-    {
         title: 'Linux Shell',
         content: (
             <p>
@@ -65,6 +14,42 @@ const ProjectData = [
         repo: 'https://github.com/curtiszki/Custom-Shell',
         tags: [
             'C'
+        ],
+    },
+    {
+        title: 'Maze Solver',
+        content: (
+            <p>
+                Code using EV3 that enables a robot to autonomously solve maze puzzles.
+            </p>
+        ),
+        repo: 'https://github.com/curtiszki/Maze-Solver',
+        tags: [
+            'C'
+        ],
+    },
+    {
+        title: 'Aeroplane Chess',
+        content: (
+            <p>
+                A Pygame implementation of the Aeroplane Chess board game implementing a sci-fi design and theme. 
+            </p>
+        ),
+        repo: 'https://github.com/curtiszki/Aeroplane-Chess',
+        tags: [
+            'Python', 'Pygame'
+        ],
+    },
+    {
+        title: 'Reddit Sentiment Analysis',
+        content: (
+            <p>
+                An analysis of the Reddit comment corpus during 2019-2021, analysing user sentiment along multiple axes to determine sentiment and changes over time.
+            </p>
+        ),
+        repo: 'https://github.com/curtiszki/Reddit-Sentiment',
+        tags: [
+            'Python', 'Apache Spark', 'scikit-learn'
         ],
     },
     {
