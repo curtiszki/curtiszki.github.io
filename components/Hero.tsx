@@ -1,6 +1,4 @@
 import React from 'react'
-import { ShineBorder } from './ui/shine-border'
-import { BounceArrow } from './ui/bounce-arrow'
 import { SectionWrapper } from './ui/section-wrapper'
 
 const Hero = () => {

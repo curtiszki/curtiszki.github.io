@@ -3,7 +3,7 @@ import React from 'react'
 import { cn } from '@/lib/utils';
 
 const labelClass = 'flex flex-col-reverse gap-2';
-const inputClass = 'appearance-none outline-none border-0 border-b-[1px] border-accent-slate-100 bg-transparent px-1 leading-6 peer focus:border-red-400 duration-300 text-wrap';
+const inputClass = 'appearance-none outline-none border-0 border-b-[1px] border-accent-slate-100 bg-transparent px-1 leading-6 peer focus:border-red-400 duration-300 text-wrap focus:bg-[rgb(17,18,21)]';
 const subHeaderClass = 'peer-focus:text-red-400 duration-300';
 
 export const ContactForm = () => {

@@ -1,6 +1,5 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
@@ -8,7 +7,6 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { text } from "stream/consumers";
 
 interface hrefObject {
   message: string;
@@ -93,7 +91,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                 }
               </div>
             </div>
-            <div className="flex flex-row flex-wrap gap-x-2 gap-y-0 my-2 box-border w-[100%] md:w-full mx-auto md:mx-0">
+            <div className="flex flex-row flex-wrap gap-x-2 gap-y-0 box-border w-[100%] md:w-full mx-auto md:mx-0">
               {
                 item.tags.map((tag, idx) => (
                   <span
@@ -108,14 +106,14 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
           </div>
         ))}
         <div
-          className="absolute h-[100%] -left-[20px] top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] opacity-85"
+          className="absolute h-[100%] -left-[20px] top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-slate-400/30 dark:via-slate-600/30 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] opacity-85 bg-transparent"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-0 top-0  w-[2px] bg-gradient-to-t from-indigo-500 via-cyan-500 to-transparent from-[0%] via-[15%] rounded-full"
           />
         </div>
       </div>

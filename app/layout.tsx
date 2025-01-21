@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className='w-full h-full scroll-smooth'>
       <body
-        className={`${varta.variable} antialiased dark w-full h-full bg-black`}
+        className={`${varta.variable} antialiased dark w-full h-full bg-[#121115] text-white selection:bg-indigo-700 selection:text-slate-50`}
       >
         {children}
         <Analytics/>
