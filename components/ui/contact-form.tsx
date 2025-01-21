@@ -8,8 +8,8 @@ const subHeaderClass = 'peer-focus:text-red-400 duration-300';
 
 export const ContactForm = () => {
   return (
-    <div className="container border-slate-400
-                    p-[20px] shadow-[inset_0_0_0_3px_rgba(255,255,255,0.08)] rounded-sm text-white mb-4">
+    <div className="container border-transparent sm:border-slate-600/65 border-[1px]
+                    p-2 sm:p-[20px] rounded-sm text-white mb-4">
       <form className="flex flex-col gap-4 text-slate-300" action="" method="post" autoComplete='off'>
           <label htmlFor="contact_name" className={labelClass}>
               <input 
@@ -25,7 +25,7 @@ export const ContactForm = () => {
             <textarea className={`${inputClass} resize-none`} id="contact_message" name="message" required={true} cols={30} rows={10} maxLength={3200}></textarea>
             <p className={subHeaderClass}>Message:</p>
           </label>
-          <button type="submit" className="w-fit px-4 rounded-md bg-rose-500/55 text-white font-bold transition duration-200 hover:bg-rose-500/75 border-2 border-transparent">
+          <button type="submit" className="w-fit px-4 py-1 md:py-0 md:px-2 rounded-md inset-0 border-teal-500 bg-transparent text-white font-semibold transition duration-200 hover:bg-teal-500/75 border-2 border-transparent my-2 sm:my-1">
             Submit
           </button>
       </form>

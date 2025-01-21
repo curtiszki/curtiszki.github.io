@@ -57,18 +57,18 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
     <div
       ref={containerRef} className="w-full mt-[16px] bg-inherit my-[10px]"
     >
-      <div ref={ref} className="text-left flex flex-col gap-2 relative">
+      <div ref={ref} className="text-center md:text-left flex flex-col gap-5 md:gap-2 relative">
         {data.map((item, index) => (
           <div
             key={index}
-            className="relative cursor-pointer rounded-lg py-[4px] px-[8px] hover:shadow-[inset_0_0_0_10em_rgba(255,255,255,0.08)] border-[1px] border-transparent hover:border-slate-600/25 transition-all:ease-out duration-500"
+            className="relative rounded-lg py-[4px] px-[8px] hover:shadow-[inset_0_0_0_10em_rgba(255,255,255,0.08)] border-[1px] border-transparent hover:border-slate-600/25 transition-all:ease-out duration-500"
           >
-            <div className="flex flex-col gap-y-1">
-              <div className="flex flex-row gap-x-2 gap-y-0 items-center">
-                <h6 className="font-bold">
+            <div className="flex flex-col gap-y-1 items-center md:items-start">
+              <div className="flex flex-row gap-x-2 items-center">
+                <h6 className="text-xl md:text-lg font-bold">
                   {item.title}
                 </h6>
-                <div className="relative left-1">
+                <div className="relative flex flex-row top-[25%] md:left-1 text-xl md:text-base">
                   {typeof item.repo === "string" &&
                         <a className="hover:text-teal-400 duration-200 transition-colors ease-out" href={item.repo}>
                           <FaGithub />
@@ -76,7 +76,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                   }
                 </div>
               </div>
-              <div>
+              <div className="text-justify md:text-left">
                 {item.content}
               </div>
               <div>
@@ -93,12 +93,12 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                 }
               </div>
             </div>
-            <div className="flex flex-row gap-x-2 gap-y-0 my-2">
+            <div className="flex flex-row flex-wrap gap-x-2 gap-y-0 my-2 box-border w-[100%] md:w-full mx-auto md:mx-0">
               {
                 item.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className={`inline-flex text-xs px-3 py-1 rounded-full font-medium leading-3 ${tagColors[idx % tagColors.length]} border-teal-300 border-1 ${textColors[idx%textColors.length]}`}
+                    className={`inline-flex text-xs px-3 py-1 rounded-full font-medium leading-3 my-1 ${tagColors[idx % tagColors.length]} border-teal-300 border-1 ${textColors[idx%textColors.length]}`}
                   >
                     {tag}
                   </span>

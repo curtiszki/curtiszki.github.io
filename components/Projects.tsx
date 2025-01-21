@@ -20,7 +20,7 @@ const ProjectData = [
         title: 'Maze Solver',
         content: (
             <p>
-                Code using EV3 that enables a robot to autonomously solve maze puzzles.
+                EV3 pathfinding algorithm that enables a robot to autonomously solve maze puzzles.
             </p>
         ),
         repo: 'https://github.com/curtiszki/Maze-Solver',
