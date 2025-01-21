@@ -30,7 +30,7 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "h-full flex items-center justify-center w-full group opacity-100 flex-col bg-[rgb(6,12,24)]",
+        "h-full flex items-center justify-center w-full group opacity-100 flex-col bg-[#1c1a22]",
         containerClassName
       )}
       onMouseMove={handleMouseMove}
@@ -56,7 +56,7 @@ export const HeroHighlight = ({
         }}
       />
 
-      <div className={cn("relative z-20 bg-[rgb(6,12,24)]", className)}>{children}</div>
+      <div className={cn("relative z-20 bg-[#1c1a22]/30", className)}>{children}</div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { text } from "stream/consumers";
 
 interface hrefObject {
   message: string;
@@ -21,6 +22,10 @@ interface ShowcaseEntry {
   href?: hrefObject[];
   tags: string[]
 };
+
+const tagColors = ['bg-cyan-500/30'];
+const textColors = ['text-cyan-200'];
+
 
 export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -65,7 +70,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                 </h6>
                 <div className="relative left-1">
                   {typeof item.repo === "string" &&
-                        <a className="hover:text-teal-600 duration-200 transition-colors ease-out" href={item.repo}>
+                        <a className="hover:text-teal-400 duration-200 transition-colors ease-out" href={item.repo}>
                           <FaGithub />
                         </a>
                   }
@@ -93,7 +98,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
                 item.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className='inline-flex text-xs px-3 py-1 rounded-full font-medium leading-3 bg-teal-500/30 border-teal-300 border-1 text-teal-300'
+                    className={`inline-flex text-xs px-3 py-1 rounded-full font-medium leading-3 ${tagColors[idx % tagColors.length]} border-teal-300 border-1 ${textColors[idx%textColors.length]}`}
                   >
                     {tag}
                   </span>
@@ -103,7 +108,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
           </div>
         ))}
         <div
-          className="absolute h-[100%] -left-[20px] top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          className="absolute h-[100%] -left-[20px] top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] opacity-85"
         >
           <motion.div
             style={{
