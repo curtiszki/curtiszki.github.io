@@ -25,7 +25,7 @@ export const ContactForm = () => {
             <textarea className={`${inputClass} resize-none`} id="contact_message" name="message" required={true} cols={30} rows={10} maxLength={3200}></textarea>
             <p className={subHeaderClass}>Message:</p>
           </label>
-          <button type="submit" className="w-fit px-4 py-1 md:py-0 md:px-2 rounded-md inset-0 border-teal-500 bg-transparent text-white font-semibold transition duration-200 hover:bg-teal-500/75 border-2 border-transparent my-2 sm:my-1">
+          <button type="submit" className="w-fit px-4 py-1 md:py-0 md:px-2 rounded-md inset-0 border-teal-500 bg-transparent text-white font-semibold transition duration-200 hover:bg-teal-500/75 border-2 my-2 sm:my-1">
             Submit
           </button>
       </form>

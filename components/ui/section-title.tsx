@@ -7,7 +7,7 @@ interface SectionTitleProps {
   
 export const SectionTitle = ({
     title,
-    bgColor ='#FF0000', 
+    bgColor = '#b81414', 
 } : SectionTitleProps) => {
     return (
         <div className={`relative w-max`}>
