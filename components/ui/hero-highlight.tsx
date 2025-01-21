@@ -30,25 +30,25 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "h-full flex items-center bg-white dark:bg-black justify-center w-full group",
+        "h-full flex items-center justify-center w-full group opacity-100 flex-col bg-[rgb(6,12,24)]",
         containerClassName
       )}
       onMouseMove={handleMouseMove}
     >
-      <div className={`absolute inset-0 bg-dot-thick-neutral-900 dark:bg-dot-thick-neutral-900  pointer-events-none`} />
+      <div className={`absolute inset-0 opacity-0 pointer-events-none`} />
       <motion.div
-        className={`pointer-events-none bg-dot-thick-teal-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100`}
+        className={`pointer-events-none bg-dot-thick-teal-600 absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100`}
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
+              220px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
           `,
           maskImage: useMotionTemplate`
             radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
+              220px circle at ${mouseX}px ${mouseY}px,
               black 0%,
               transparent 100%
             )
@@ -56,42 +56,7 @@ export const HeroHighlight = ({
         }}
       />
 
-      <div className={cn("relative z-20", className)}>{children}</div>
+      <div className={cn("relative z-20 bg-[rgb(6,12,24)]", className)}>{children}</div>
     </div>
-  );
-};
-
-export const Highlight = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <motion.span
-      initial={{
-        backgroundSize: "0% 100%",
-      }}
-      animate={{
-        backgroundSize: "100% 100%",
-      }}
-      transition={{
-        duration: 2,
-        ease: "linear",
-        delay: 0.5,
-      }}
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "left center",
-        display: "inline",
-      }}
-      className={cn(
-        `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
-        className
-      )}
-    >
-      {children}
-    </motion.span>
   );
 };

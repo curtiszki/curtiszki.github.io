@@ -7,11 +7,8 @@ import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-[100%] relative overflow-hidden mx-auto bg-black text-white sm:px-[10px] md:px-[8px] lg:px-[4px] leading-relaxed">
-      <HeroHighlight
-          containerClassName={`relative w-full bg-transparent`}
-          className={'opacity-100 h-full flex flex-col items-center justify-center py-[16px]'}
-      >
+    <main className="w-full min-h-[100%] relative overflow-hidden mx-auto bg-slate-900 text-slate-200 sm:px-[10px] md:px-[8px] lg:px-[4px] leading-relaxed selection:bg-indigo-700 selection:text-slate-50">
+      <HeroHighlight>
         <Hero/>
         <Projects />
         <About />

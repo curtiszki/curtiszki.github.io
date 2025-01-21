@@ -9,7 +9,7 @@ const subHeaderClass = 'peer-focus:text-red-400 duration-300';
 export const ContactForm = () => {
   return (
     <div className="container border-slate-400
-                    p-[20px] shadow-[inset_0_0_0_3px_rgba(255,255,255,0.08)] rounded-sm text-white">
+                    p-[20px] shadow-[inset_0_0_0_3px_rgba(255,255,255,0.08)] rounded-sm text-white mb-4">
       <form className="flex flex-col gap-4 text-slate-300" action="" method="post" autoComplete='off'>
           <label htmlFor="contact_name" className={labelClass}>
               <input 

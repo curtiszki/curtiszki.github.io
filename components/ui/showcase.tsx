@@ -50,7 +50,7 @@ export const Showcase = ({ data }: { data: ShowcaseEntry[] }) => {
 
   return (
     <div
-      ref={containerRef} className="w-full mt-[16px] bg-black my-[10px]"
+      ref={containerRef} className="w-full mt-[16px] bg-inherit my-[10px]"
     >
       <div ref={ref} className="text-left flex flex-col gap-2 relative">
         {data.map((item, index) => (
