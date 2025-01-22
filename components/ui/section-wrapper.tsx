@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface SectionProps {
     idName?: string,
@@ -17,7 +17,9 @@ export const SectionWrapper = ({
     );
 };
 
-export const SectionContent = (props) => {
+export const SectionContent = (props: {
+    children?: ReactNode;
+}) => {
     return (
         <div className="container bg-inherit sm:px-2 py-2 md:py-3">
             {props.children}
