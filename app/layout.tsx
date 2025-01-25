@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {Varta} from "next/font/google";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/next';
+import {GoogleAnalytics} from '@next/third-parties/google';
 
 const varta = Varta({
   variable: "--font-varta",
@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${varta.variable} antialiased dark w-full h-full bg-[#121115] text-white selection:bg-indigo-700 selection:text-slate-50`}
       >
         {children}
-        <Analytics/>
+        <GoogleAnalytics gaId="G-8LS4LKMJ2Z"></GoogleAnalytics>
       </body>
     </html>
   );
